@@ -1,0 +1,15 @@
+name: MineRegen
+main: com.woutwoot.mrg.Main
+version: ${project.version}
+author: woutwoot
+description: Regenerate mines block by block.
+website: http://woutwoot.com/
+prefix: MineRegen
+softdepend: [WorldEdit]
+commands:
+  mrg:
+    description: Main command for MineRegen.
+    aliases: [mineregen, mr]
+    permission: mrg.use
+    permission-message: You do not have the required permission (<permission>)
+    usage: Syntax error! Try /<command> help.
