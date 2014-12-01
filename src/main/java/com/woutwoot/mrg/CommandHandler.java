@@ -1,17 +1,9 @@
 package com.woutwoot.mrg;
 
+import com.woutwoot.mrg.commands.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-
-import com.woutwoot.MineRegen.commands.AddBlocksCommand;
-import com.woutwoot.MineRegen.commands.AddSelectionCommand;
-import com.woutwoot.MineRegen.commands.ConvertCommand;
-import com.woutwoot.MineRegen.commands.CreateCommand;
-import com.woutwoot.MineRegen.commands.HelpCommand;
-import com.woutwoot.MineRegen.commands.RegenAllCommand;
-import com.woutwoot.MineRegen.commands.RegenCommand;
-import com.woutwoot.MineRegen.commands.RemoveSelectionCommand;
 
 public class CommandHandler implements CommandExecutor {
 

@@ -1,5 +1,6 @@
-package com.woutwoot.mrg;
+package com.woutwoot.mrg.tasks;
 
+import com.woutwoot.mrg.Mine;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -9,7 +10,7 @@ public class ResetTask extends BukkitRunnable {
 	private Block b;
 	private Mine m;
 
-	ResetTask(Block b, Mine m) {
+	public ResetTask(Block b, Mine m) {
 		this.b = b;
 		this.m = m;
 	}

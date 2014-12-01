@@ -1,8 +1,7 @@
 package com.woutwoot.mrg.commands;
 
+import com.woutwoot.mrg.Mines;
 import org.bukkit.command.CommandSender;
-
-import com.woutwoot.MineRegen.Mines;
 
 public class RegenCommand implements BasicCommand {
 

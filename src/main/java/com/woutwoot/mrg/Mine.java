@@ -1,15 +1,16 @@
 package com.woutwoot.mrg;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import com.woutwoot.mrg.generators.GeneratorDefault;
+import com.woutwoot.mrg.generators.GeneratorOresOnly;
+import com.woutwoot.mrg.generators.MineGenerator;
+import com.woutwoot.mrg.tasks.ResetTask;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 
-import com.woutwoot.MineRegen.generators.GeneratorDefault;
-import com.woutwoot.MineRegen.generators.GeneratorOresOnly;
-import com.woutwoot.MineRegen.generators.MineGenerator;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class Mine {
 

@@ -1,8 +1,8 @@
 package com.woutwoot.mrg.commands;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.sk89q.worldedit.bukkit.WorldEditPlugin;
+import com.sk89q.worldedit.bukkit.selections.Selection;
+import com.woutwoot.mrg.Mines;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -10,9 +10,8 @@ import org.bukkit.block.Block;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.sk89q.worldedit.bukkit.WorldEditPlugin;
-import com.sk89q.worldedit.bukkit.selections.Selection;
-import com.woutwoot.MineRegen.Mines;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RemoveSelectionCommand implements BasicCommand{
 

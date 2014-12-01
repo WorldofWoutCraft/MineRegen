@@ -1,5 +1,6 @@
-package com.woutwoot.mrg;
+package com.woutwoot.mrg.events;
 
+import com.woutwoot.mrg.Mines;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
