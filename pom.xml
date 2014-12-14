@@ -27,7 +27,19 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>1.8-R0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.sk89q</groupId>
             <artifactId>worldedit</artifactId>
@@ -35,14 +47,6 @@
             <type>jar</type>
             <scope>system</scope>
             <systemPath>${basedir}/lib/worldedit-5.6.3.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.8</version>
-            <type>jar</type>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/bukkit-1.8-R0.1-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 
