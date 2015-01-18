@@ -14,7 +14,7 @@ import java.util.List;
 public class Main extends JavaPlugin {
 
 	public static File folder;
-	public static List<Creator> creators = new ArrayList<Creator>();
+	public static List<Creator> creators = new ArrayList<>();
 	private static Main instance;
 
 	public static Creator getCreator(Player player) {

@@ -41,6 +41,11 @@ public class Creator {
 	
 	@Override
 	public boolean equals(Object o){
+		if(o instanceof Player){
+			return ((Player)o).getUniqueId().equals(p.getUniqueId());
+		}else if (o instanceof Creator){
+			return ((Creator)o).getPlayer().getUniqueId().equals(p.getUniqueId());
+		}
 		return this.getPlayer().equals(o);
 	}
 	
