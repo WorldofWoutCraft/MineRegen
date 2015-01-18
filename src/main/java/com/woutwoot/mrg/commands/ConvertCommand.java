@@ -3,6 +3,8 @@ package com.woutwoot.mrg.commands;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.bukkit.selections.Selection;
 import com.woutwoot.mrg.Mines;
+import com.woutwoot.mrg.mine.Mine;
+import com.woutwoot.mrg.mine.BlocksMine;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -20,12 +22,17 @@ public class ConvertCommand implements BasicCommand {
 	public void process(CommandSender sender, String[] args) {
 		List<Block> blocks1 = getBlocksInSlection((Player) sender);
 		if (!blocks1.isEmpty()) {
-			for (Block b : blocks1) {
-				if (b.getType() == Material.COAL_ORE || b.getType() == Material.IRON_ORE || b.getType() == Material.GOLD_ORE || b.getType() == Material.REDSTONE_ORE || b.getType() == Material.DIAMOND_ORE || b.getType() == Material.EMERALD_ORE || b.getType() == Material.WOOL) {
-					Mines.getMine("default").addBlock(b);
+			Mine m = Mines.getMine("default");
+			if(m instanceof BlocksMine){
+				for (Block b : blocks1) {
+					if (b.getType() == Material.COAL_ORE || b.getType() == Material.IRON_ORE || b.getType() == Material.GOLD_ORE || b.getType() == Material.REDSTONE_ORE || b.getType() == Material.DIAMOND_ORE || b.getType() == Material.EMERALD_ORE || b.getType() == Material.WOOL) {
+						((BlocksMine) m).addBlock(b);
+					}
 				}
+				sender.sendMessage("The blocks in your selection have been added.");
+			}else {
+				sender.sendMessage("You can't add blocks to a region based mine.");
 			}
-			sender.sendMessage("The blocks in your selection have been added.");
 		} else {
 			sender.sendMessage("Please make a slection first.");
 		}

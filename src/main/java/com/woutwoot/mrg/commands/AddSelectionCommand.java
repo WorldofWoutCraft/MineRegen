@@ -3,6 +3,8 @@ package com.woutwoot.mrg.commands;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.bukkit.selections.Selection;
 import com.woutwoot.mrg.Mines;
+import com.woutwoot.mrg.mine.Mine;
+import com.woutwoot.mrg.mine.BlocksMine;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -18,11 +20,16 @@ public class AddSelectionCommand implements BasicCommand{
 	@Override
 	public void process(CommandSender sender, String[] args) {
 		List<Block> blocks = getBlocksInSlection((Player) sender);
-		if(!blocks.isEmpty()){
-			Mines.getMine("default").addBlocks(blocks);
-			sender.sendMessage("The blocks in your selection have been added.");
+		Mine m = Mines.getMine("default");
+		if(m instanceof BlocksMine){
+			if(!blocks.isEmpty()){
+				((BlocksMine)m).addBlocks(blocks);
+				sender.sendMessage("The blocks in your selection have been added.");
+			}else{
+				sender.sendMessage("Please make a slection first.");
+			}
 		}else{
-			sender.sendMessage("Please make a slection first.");
+			sender.sendMessage("You can't add blocks to a region based mine.");
 		}
 	}
 	

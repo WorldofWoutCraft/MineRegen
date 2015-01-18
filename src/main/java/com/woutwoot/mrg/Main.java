@@ -3,8 +3,8 @@ package com.woutwoot.mrg;
 import com.woutwoot.mrg.events.BlockBreakHandler;
 import com.woutwoot.mrg.events.BlockExplodeHandler;
 import com.woutwoot.mrg.events.BlockFallHandler;
+import com.woutwoot.mrg.mine.BlocksMine;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -13,9 +13,9 @@ import java.util.List;
 
 public class Main extends JavaPlugin {
 
-	public static Plugin plugin;
 	public static File folder;
 	public static List<Creator> creators = new ArrayList<Creator>();
+	private static Main instance;
 
 	public static Creator getCreator(Player player) {
 		for (Creator c : creators) {
@@ -26,14 +26,18 @@ public class Main extends JavaPlugin {
 		return null;
 	}
 
+	public static Main getInstance() {
+		return instance;
+	}
+
 	@Override
 	public void onEnable() {
-		plugin = this;
+		instance = this;
 		folder = this.getDataFolder();
 		folder.mkdirs();
 
 		// Create and add default mine.
-		Mines.addMine(new Mine("default"));
+		Mines.addMine(new BlocksMine("default"));
 
 		this.getCommand("mrg").setExecutor(new CommandHandler());
 		this.getServer().getPluginManager().registerEvents(new BlockBreakHandler(), this);

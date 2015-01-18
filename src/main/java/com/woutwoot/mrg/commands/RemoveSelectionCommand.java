@@ -3,6 +3,7 @@ package com.woutwoot.mrg.commands;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.bukkit.selections.Selection;
 import com.woutwoot.mrg.Mines;
+import com.woutwoot.mrg.mine.BlocksMine;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -19,8 +20,10 @@ public class RemoveSelectionCommand implements BasicCommand{
 	public void process(CommandSender sender, String[] args) {
 		List<Block> blocks = getBlocksInSlection((Player) sender);
 		if(!blocks.isEmpty()){
-			Mines.getMine("default").removeBlocks(blocks);
-			sender.sendMessage("The blocks in your selection have been removed.");
+			if(Mines.getMine("default") instanceof BlocksMine) {
+				((BlocksMine) Mines.getMine("default")).removeBlocks(blocks);
+				sender.sendMessage("The blocks in your selection have been removed.");
+			}
 		}else{
 			sender.sendMessage("Please make a slection first.");
 		}

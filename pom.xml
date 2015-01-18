@@ -32,6 +32,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>sk89q-repo</id>
+            <url>http://maven.sk89q.com/repo/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -45,8 +49,6 @@
             <artifactId>worldedit</artifactId>
             <version>5.6.3</version>
             <type>jar</type>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/worldedit-5.6.3.jar</systemPath>
         </dependency>
     </dependencies>
 

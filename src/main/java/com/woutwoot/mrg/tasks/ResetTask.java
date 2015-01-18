@@ -1,11 +1,10 @@
 package com.woutwoot.mrg.tasks;
 
-import com.woutwoot.mrg.Mine;
+import com.woutwoot.mrg.mine.Mine;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 
-public class ResetTask extends BukkitRunnable {
+public class ResetTask implements Runnable {
 
 	private Block b;
 	private Mine m;
